@@ -8,7 +8,7 @@ const app = express();
 
 //EJS AS RENDER ENGINE
 app.set('view engine', 'ejs');
-app.set('views','views'); //look for views in views folder
+app.set('views',  path.join(__dirname), 'views'); //look for views in views folder
 
 //ENABLING BODY PARSER:
 app.use(express.json());
