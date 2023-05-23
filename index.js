@@ -3,7 +3,7 @@ const express = require("express");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 const viewRoutes = require("./routes/viewRoutes");
-const rootDir = require('./utils/path');
+const rootDir = path.dirname(require.main.filename);
 
 const app = express();
 
