@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
+const viewRoutes = require("./routes/viewRoutes");
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.use((err, req, res, next) => {
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/openai", require("./routes/openaiRoutes"));
+
+app.use(viewRoutes);
 
 app.listen(process.env.PORT, () =>
   console.log(`Server started on port ${port}`)
