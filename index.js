@@ -3,13 +3,13 @@ const express = require("express");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 const viewRoutes = require("./routes/viewRoutes");
-const rootDir = path.dirname(require.main.filename);
+
 
 const app = express();
 
 //EJS AS RENDER ENGINE
 app.set('view engine', 'ejs');
-app.set('views', path.join(rootDir,"views")); //look for views in views folder
+app.set('views', path.join(__dirname,"views")); //look for views in views folder
 
 //ENABLING BODY PARSER:
 app.use(express.json());
